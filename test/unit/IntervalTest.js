@@ -36,7 +36,7 @@ describe("Interval - include", function () {
         new Interval(11, 18)
 
     ].forEach(function (interval) {
-        it("should overlaps " + testedInterval.toString() + " and " + interval.toString(), function () {
+        it("should includes " + testedInterval.toString() + " and " + interval.toString(), function () {
             expect(testedInterval.includes(interval)).toBeTruthy();
         });
     });
@@ -48,8 +48,8 @@ describe("Interval - include", function () {
 
 
     ].forEach(function (interval) {
-        it("should not overlaps " + testedInterval.toString() + " and " + interval.toString(), function () {
-            expect(testedInterval.overlaps(interval)).toBeFalsy();
+        it("should not includes " + testedInterval.toString() + " and " + interval.toString(), function () {
+            expect(testedInterval.includes(interval)).toBeFalsy();
         });
     });
 });

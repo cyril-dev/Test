@@ -33,11 +33,6 @@ describe("Arrangement", function() {
   	})
   })
 
-  it("N plus petit que R"),function(){
-  	var f = function(){
-  		Util.arrangement(8,10);
-  	}
-  	expect(f).toThrow("N plus petit que R");
-  }
+  
 
 });
