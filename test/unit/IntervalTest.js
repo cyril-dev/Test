@@ -1,4 +1,4 @@
-/*describe("Interval - overlapping", function () {
+describe("Interval - overlapping", function () {
     testedInterval = new Interval(10, 20);
 
     [
@@ -23,4 +23,33 @@
             expect(testedInterval.overlaps(interval)).toBeFalsy();
         });
     });
-});*/
+});
+
+describe("Interval - include", function () {
+    testedInterval = new Interval(10, 20);
+
+    [
+        new Interval(11, 13),
+        new Interval(15, 16),
+        new Interval(17, 19),
+        new Interval(11, 18),
+        new Interval(11, 18)
+
+    ].forEach(function (interval) {
+        it("should overlaps " + testedInterval.toString() + " and " + interval.toString(), function () {
+            expect(testedInterval.includes(interval)).toBeTruthy();
+        });
+    });
+
+    [
+        new Interval(8, 9),
+        new Interval(21, 22),
+        new Interval(15, 22),
+
+
+    ].forEach(function (interval) {
+        it("should not overlaps " + testedInterval.toString() + " and " + interval.toString(), function () {
+            expect(testedInterval.overlaps(interval)).toBeFalsy();
+        });
+    });
+});
