@@ -33,6 +33,14 @@ Interval.prototype.includes = function (interval) {
  * @returns {Interval[]}
  */
 Interval.prototype.union = function (interval) {
+if(Interval.prototype.overlaps(interval)){
+  return new Interval(Math.min(this.start,interval.start),Math.max(this.end,interval.end));
+}else{
+    thrown "Infaisable";
+}
+
+
+
 
 };
 
